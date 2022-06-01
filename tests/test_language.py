@@ -9,7 +9,7 @@ from utils.helpers import get_page
 
 
 def test_language(driver: WebDriver):
-    server = os.environ.get("SERVER")
+    server = os.environ.get("SERVER", "https://go.mail.ru/")
     driver.get(server)
     page = get_page(driver)()
     text = "привет hello"

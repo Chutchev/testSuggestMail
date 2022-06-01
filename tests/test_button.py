@@ -13,7 +13,7 @@ test_data = [
 
 @pytest.mark.parametrize("testdata", test_data)
 def test_random_suggest_click(driver: WebDriver, testdata):
-    server = os.environ.get("SERVER")
+    server = os.environ.get("SERVER", "https://go.mail.ru/")
     driver.get(server)
     page = get_page(driver)()
     # 1. Нашли поле Поиска

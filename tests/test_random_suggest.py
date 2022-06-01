@@ -6,7 +6,7 @@ from utils.helpers import get_page
 
 
 def test_random_suggest_click(driver: WebDriver):
-    server = os.environ.get("SERVER")
+    server = os.environ.get("SERVER", "https://go.mail.ru/")
     driver.get(server)
     page = get_page(driver)()
     # 1. Нашли поле Поиска

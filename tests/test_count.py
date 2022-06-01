@@ -17,7 +17,7 @@ test_data = [
 
 @pytest.mark.parametrize("test_data", test_data)
 def test_count(driver: WebDriver, test_data):
-    server = os.environ.get("SERVER")
+    server = os.environ.get("SERVER", "https://go.mail.ru/")
     driver.get(server)
     page = get_page(driver)()
     # 1. Нашли поле Поиска
